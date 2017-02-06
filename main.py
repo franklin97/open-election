@@ -20,11 +20,12 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello world!')
 
-class UploadHandlet(webapp2.RequestHandler):
+class UploadHandler(webapp2.RequestHandler):
     def post(self):
-        csv_data = self.request.Post .get('csv_file').file.read()
+        csv_data = self.request.POST.get('csv_file').file.read()
         self.response.out.write(csv_data)
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/upload', UploadHandler)
 ], debug=True)
