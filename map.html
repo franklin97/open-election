@@ -33,7 +33,9 @@
       var electDist = event.feature.getProperty('elect_dist');
 
       var content = 'Election District: ' + electDist + '<br>';
-      inf
+      infowindow.setContent(content);
+      infowindow.setPosition(event.latLng);
+      infowindow.open(map);
     });
    }
   </script>
